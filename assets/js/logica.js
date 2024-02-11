@@ -1,36 +1,30 @@
 $(document).ready(function () {
     $('#searchButton').click(function () {
-        var heroId = $('#heroInput').val(); // Paso 1: Captura de información
+        var heroId = $('#heroInput').val().trim(); // Paso 1: Captura de información
         if (isValidInput(heroId)) { // Paso 3: Comprobación de la entrada del usuario
-            getHeroInfo(heroId); // Paso 2: Separación de la captura de datos y la consulta
+            getHeroInfo(heroId);
+            $('#liveAlertPlaceholder').hide(); // Oculta el mensaje de error si la entrada es válida
         } else {
-            alert('Por favor, ingresa un número válido.'); // Paso 8: Manejo de errores
+            $('#liveAlertPlaceholder').text('Por favor, ingresa un número válido.').show(); // Paso 8: Manejo de errores
         }
     });
 });
 
 
-$(document).ready(function () {
-    $('#searchButtonName').click(function () {
-        var heroName = $('#heroInput').val(); // Paso 1: Captura de información
-        if (isValidInput2(heroName)) { // Paso 3: Comprobación de la entrada del usuario
-            getHeroInfo2(heroName); // Paso 2: Separación de la captura de datos y la consulta
-        } else {
-            console.log('isValidInput2 result:', heroName); // Imprime el resultado de la validación
-            alert('Por favor, ingresa un nombre válido.'); // Paso 8: Manejo de errores
-        }
-    });
-});
+
+
+// 1.- valida que input sea un número
+// Se verifica que num no sea NaN para asegurarse de que sea un número.
+// Se verifica que num esté en el rango de 1 a 731. Ambos Inclusive
 
 function isValidInput(input) {
-    return !isNaN(input) && parseInt(Number(input)) == input && !isNaN(parseInt(input, 10));
+    return !isNaN(input) && !isNaN(parseInt(input, 10)) && input >= 1 && input <= 731
 }
 
 
-
-function isValidInput2(input) {
-    return /^[a-zA-Z\s]+$/.test(input);
-}
+// function isValidInput2(input) {
+//     return /^[a-zA-Z\s]+$/.test(input);
+// }
 
 
 // Funcion para obtener la Informacion mediantre API
@@ -41,29 +35,34 @@ function getHeroInfo(heroId) {
         dataType: 'json',
         success: function (data) {
             renderHeroCard(data); // Paso 5: Renderizar información
-            renderHeroStatsChart(data); // Paso 7: Uso de CanvasJS para gráficos
+            renderHeroStatsChart(data); // Paso 7: Uso de CanvasJS para gráficos de torta o pie
+            $('#liveAlertPlaceholder').hide(); // Oculta el mensaje de error si la entrada es válida
         },
         error: function () {
-            alert('Error al buscar la información del superhéroe.'); // Paso 8: Manejo de errores
+            $('#liveAlertPlaceholder').text('Eror al buscar la información del superhéroe..').show(); // Paso 8: Manejo de errores
         }
     });
 }
 
 
 
+// Paso 6: Uso de ciclos/métodos de arreglos que permitan ordenar y mostrar la información
 function renderHeroCard(hero) {
+
     var cardHtml = `
-        <div class="card " >
-            <img src="${hero.image.url}" class="card-img-top" alt="${hero.name}">
-            <div class="card-body">
-                <h5 class="card-title">${hero.name}</h5>
-                <p class="card-text">Conexiones: ${hero.connections['group-affiliation']}</p>
-                <p class="card-text">Publicado por: ${hero.biography.publisher}</p>
-                <p class="card-text">Primera aparición: ${hero.biography['first-appearance']}</p>
-            </div>
-        </div>
+                <div class="card " >
+                <img src="${hero.image.url}" class="card-img-top" alt="${hero.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${hero.name}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Conexiones: ${hero.connections['group-affiliation']}</li>
+                    <li class="list-group-item">Publicado por: ${hero.biography.publisher}</li>
+                    <li class="list-group-item">Primera aparición: ${hero.biography['first-appearance']}</li>
+                </ul>
+                </div>
     `;
-    $('#heroCard').html(cardHtml); // Paso 6: Uso de ciclos/métodos de arreglo
+    $('#heroCard').html(cardHtml);
     // Renderiza la tarjeta del héroe -  ajusta la altura de heroChart
 }
 
@@ -99,3 +98,4 @@ function renderHeroStatsChart(hero) {
     chart.render();
 
 }
+

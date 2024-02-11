@@ -1,23 +1,4 @@
 
-
-// 
-//   function mostrarListaSuperheroes(listaSuperheroes) {
-//     var tablaHtml = '<table class="table table-dark table-striped-columns"  border="1">'; // Asegúrate de dar estilos a tu tabla como prefieras
-//     tablaHtml += '<tr><th>ID</th><th>Name</th></tr>'; // Encabezados de la tabla
-
-//     listaSuperheroes.forEach(function (heroe) {
-//       tablaHtml += '<tr><td>' + heroe.id + '</td><td>' + heroe.name + '</td></tr>'; // Filas de la tabla
-//     });
-
-//     tablaHtml += '</table>';
-//     console.log(listasuperhero)
-//     console.log(tablaHtml)
-//     return tablaHtml;
-//   }
-
-//   // Ahora, insertamos la tabla en tu HTML
-//   document.getElementById('ListaSuperHero').innerHTML = mostrarListaSuperheroes(listasuperhero);
-// }
 document.addEventListener('DOMContentLoaded', function () {
 
   var listasuperhero = [

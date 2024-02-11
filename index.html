@@ -73,10 +73,6 @@
 
             <hr class="d-md-none text-white-50">
 
-
-
-
-
         </div>
 
     </div>
@@ -86,7 +82,9 @@
         <div class="container mt-5 text-center">
             <div class="row justify-content-center mb-3">
                 <div class="col-md-4">
-                    <input type="text" id="heroInput" class="form-control" placeholder="Ingresa ID del SuperHéroe">
+                    <div id="liveAlertPlaceholder" class="alert alert-danger" role="alert"></div>
+
+                    <input type="number" id="heroInput" class="form-control" placeholder="Ingresa ID del SuperHéroe">
                     <button id="searchButton" class="btn btn-outline-warning  mt-3" type="submit">Buscar
                     </button>
 
@@ -94,7 +92,6 @@
             </div>
             <div class="row">
                 <div id="heroCard" class="col-12 col-md-4">
-
                     <!-- Contenido de heroCard aquí -->
                 </div>
                 <div class="col-12 col-md-8">
