@@ -9,7 +9,6 @@ body {
 
 
 
-
 .navbar-brand img {
   max-width: 150px; 
   height: auto ;
@@ -23,6 +22,10 @@ body {
 
 ul{
   text-decoration: none;
+}
+
+#heroChart{
+  height: 650px;
 }
 
 main{
