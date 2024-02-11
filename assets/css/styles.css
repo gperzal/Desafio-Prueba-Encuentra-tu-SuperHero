@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
 html, body {
   height: 100%;
   margin: 0;
@@ -8,15 +11,41 @@ body {
 }
 
 
+.navbar-nav a {
+  color: #fff ; 
+}
+
+.navbar span {
+  font-family: 'Anton', sans-serif;
+  font-size: xx-large;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Esto es para separar el logo y los enlaces */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
 
 .navbar-brand img {
   max-width: 150px; 
-  height: auto ;
- 
+  height: 50px; /* Ajusta esto según el tamaño de tu logo */
+  margin-right: 10px; /* Espacio entre el logo y el texto, ajusta según sea necesario */
 }
 
-.navbar-nav a {
-  color: #fff ; 
+.navbar-nav {
+  display: flex;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0 10px; /* Espacio horizontal dentro de los enlaces */
+  /* Agrega cualquier otro estilo que necesites para tus enlaces */
 }
 
 
@@ -37,4 +66,27 @@ main{
 
 footer {
   flex-shrink: 0; /* Esto asegura que el footer no se encoge más allá de su altura */
+}
+
+
+
+
+/* Table */
+
+.table {
+  float: left;
+  width: 33.33%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: solid ;
+}
+.fila {
+  display: flex;
+}
+.clear {
+  clear: both;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
 }

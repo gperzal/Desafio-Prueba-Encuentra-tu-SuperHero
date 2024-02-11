@@ -9,13 +9,32 @@ $(document).ready(function () {
     });
 });
 
+
+$(document).ready(function () {
+    $('#searchButtonName').click(function () {
+        var heroName = $('#heroInput').val(); // Paso 1: Captura de información
+        if (isValidInput2(heroName)) { // Paso 3: Comprobación de la entrada del usuario
+            getHeroInfo2(heroName); // Paso 2: Separación de la captura de datos y la consulta
+        } else {
+            console.log('isValidInput2 result:', heroName); // Imprime el resultado de la validación
+            alert('Por favor, ingresa un nombre válido.'); // Paso 8: Manejo de errores
+        }
+    });
+});
+
 function isValidInput(input) {
     return !isNaN(input) && parseInt(Number(input)) == input && !isNaN(parseInt(input, 10));
 }
 
+
+
+function isValidInput2(input) {
+    return /^[a-zA-Z\s]+$/.test(input);
+}
+
+
 // Funcion para obtener la Informacion mediantre API
 function getHeroInfo(heroId) {
-
     $.ajax({ // Paso 4: Consulta a la API
         url: `https://superheroapi.com/api.php/10232407405152330/${heroId}`,
         type: 'GET',
@@ -29,6 +48,8 @@ function getHeroInfo(heroId) {
         }
     });
 }
+
+
 
 function renderHeroCard(hero) {
     var cardHtml = `
@@ -44,11 +65,6 @@ function renderHeroCard(hero) {
     `;
     $('#heroCard').html(cardHtml); // Paso 6: Uso de ciclos/métodos de arreglo
     // Renderiza la tarjeta del héroe -  ajusta la altura de heroChart
-
-
-
-
-
 }
 
 
@@ -60,7 +76,7 @@ function renderHeroStatsChart(hero) {
         animationEnabled: true,
         title: {
             text: `Estadísticas de Poder para ${hero.name}`
-            
+
         },
         data: [{
             type: "pie", // Tipo de gráfico de pastel
