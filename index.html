@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Desafío - Encuentra tu SuperHero</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+</head>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        <!-- logo y nombre de la web -->
+
+        <a class="navbar-brand me-auto" href="#">
+
+
+            <img src="./assets/img/Marvel-y-DC.png" alt="Logo Marvel y DC">
+            <span class=" text-warning"> Super Hero API</span>
+
+        </a>
+
+        <!-- boton del menu -->
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- elementos del menu colapsable -->
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Precios</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Servicios
+                    </a>
+
+                    <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Renta</a></li>
+                        <li><a class="dropdown-item" href="#">Equipos</a>
+                        <li>
+                        <li><a class="dropdown-item" href="#">Networking</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr class="d-md-none text-white-50">
+
+
+
+
+
+        </div>
+
+    </div>
+</nav>
+<main>
+    <section>
+        <div class="container mt-5 text-center">
+            <div class="row justify-content-center mb-3">
+                <div class="col-md-4">
+                    <input type="text" id="heroInput" class="form-control" placeholder="Ingresa el ID del superhéroe">
+                    <button id="searchButton" class="btn btn-outline-warning mt-3" type="submit">Información</button>
+                </div>
+            </div>
+            <div class="row">
+                <div id="heroCard" class="col-12 col-md-4">
+
+                    <!-- Contenido de heroCard aquí -->
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="" id="heroChart">
+                        <!-- Contenido de heroChart aquí -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <div class="container">
+        <div>
+            <!-- enlaces redes sociales -->
+
+            <a href="https://www.linkedin.com/in/guido-perez-zelaya-3b6a32113/" target="_blank" class="text-white mx-2">
+                <i class="bi bi-linkedin"></i></a>
+            </a>
+            <a href="https://github.com/gperzal" target="_blank" class="text-white mx-2">
+                <i class="bi bi-github"></i>
+            </a>
+
+            <a href="https://wa.me//5998876935" target="_blank" class="text-white mx-2">
+                <i class="bi bi-whatsapp"></i></a>
+            </a>
+
+
+
+        </div>
+        <p class="mb-1">Todos los derechos e izquierdos reservados por Guido Perez para Desafio Latam 2024 - G64
+            &copy;
+        </p>
+
+    </div>
+</footer>
+<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+
+<!-- CanvasJS -->
+<script src="https://cdn.canvasjs.com/ga/canvasjs.min.js"></script>
+
+
+<script src="./assets/js/logica.js"></script>
+
+</body>
+
+</html>
