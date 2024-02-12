@@ -4,6 +4,7 @@ $(document).ready(function () {
         if (isValidInput(heroId)) { // Paso 3: Comprobación de la entrada del usuario
             getHeroInfo(heroId);
             $('#liveAlertPlaceholder').hide(); // Oculta el mensaje de error si la entrada es válida
+            $('#logo').hide(); // Esto ocultará el div con id="logo"
         } else {
             $('#liveAlertPlaceholder').text('Por favor, ingresa un número válido.').show(); // Paso 8: Manejo de errores
         }

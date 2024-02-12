@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  var listasuperhero = [
+  let listasuperhero = [
     { id: 1, name: "A-Bomb" },
     { id: 2, name: "Abe Sapien" },
     { id: 3, name: "Abin Sur" },
@@ -737,14 +737,14 @@ document.addEventListener('DOMContentLoaded', function () {
   ];
 
   function mostrarListaSuperheroes(listaSuperheroes) {
-    var totalPorColumna = 244;
-    var columnasHtml = '';
+    let totalPorColumna = 244;
+    let columnasHtml = '';
 
     // Crear tres columnas de superhéroes
-    for (var i = 0; i < 3; i++) {
-      var inicio = i * totalPorColumna;
-      var fin = inicio + totalPorColumna;
-      var lista = listaSuperheroes.slice(inicio, fin);
+    for (let i = 0; i < 3; i++) {
+      let inicio = i * totalPorColumna;
+      let fin = inicio + totalPorColumna;
+      let lista = listaSuperheroes.slice(inicio, fin);
 
       columnasHtml += '<table class="table table-striped-columns"  >';
       columnasHtml += '<tr class="table-dark"><th  class= "table-dark" >ID</th><th>Name</th></tr>';

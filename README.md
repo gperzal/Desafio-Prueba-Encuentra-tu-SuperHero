@@ -26,9 +26,17 @@ Aquí algunas capturas de pantalla de la aplicación:
 
 Para una experiencia interactiva, visita la versión desplegada en [GitHub Pages](https://gperzal.github.io/Desafio-Prueba-Encuentra-tu-SuperHero/).
 
-## Instalación y Uso
+## Contribuir
 
-Para utilizar este proyecto, visita el siguiente enlace: [Desafío - Encuentra tu SuperHéroe](https://github.com/gperzal/Desafio-Prueba-Encuentra-tu-SuperHero).
+Las contribuciones son lo que hacen a la comunidad de código abierto un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas será muy apreciada.
+
+Si tienes una sugerencia para mejorar esto, por favor bifurca el repositorio y crea un pull request. También puedes simplemente abrir un issue con la etiqueta "mejora".
+
+- Bifurca el Proyecto
+- Crea tu Rama de Característica (git checkout -b feature/AmazingFeature)
+- Haz Commit de tus Cambios (git commit -m 'Add some AmazingFeature')
+- Push a la Rama (git push origin feature/AmazingFeature)
+- Abre un Pull Request
 
 ## Contacto
 
