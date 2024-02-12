@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('#searchButton').click(function () {
-        var heroId = $('#heroInput').val().trim(); // Paso 1: Captura de información
+        let heroId = $('#heroInput').val().trim(); // Paso 1: Captura de información
         if (isValidInput(heroId)) { // Paso 3: Comprobación de la entrada del usuario
             getHeroInfo(heroId);
             $('#liveAlertPlaceholder').hide(); // Oculta el mensaje de error si la entrada es válida
@@ -50,7 +50,7 @@ function getHeroInfo(heroId) {
 // Paso 6: Uso de ciclos/métodos de arreglos que permitan ordenar y mostrar la información
 function renderHeroCard(hero) {
 
-    var cardHtml = `
+    let cardHtml = `
                 <div class="card " >
                 <img src="${hero.image.url}" class="card-img-top" alt="${hero.name}">
                 <div class="card-body">
@@ -70,7 +70,7 @@ function renderHeroCard(hero) {
 
 
 function renderHeroStatsChart(hero) {
-    var chart = new CanvasJS.Chart("heroChart", {
+    let chart = new CanvasJS.Chart("heroChart", {
         theme: "dark2",
         exportEnabled: true,
         animationEnabled: true,
