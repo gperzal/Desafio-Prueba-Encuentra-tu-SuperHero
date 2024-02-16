@@ -59,13 +59,13 @@ function renderHeroCard(hero) {
                     <h5 class="card-title">${hero.name}</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Conexiones: ${hero.connections['group-affiliation']}</li>
-                    <li class="list-group-item">Publicado por: ${hero.biography.publisher}</li>
-                    <li class="list-group-item">Ocupación: ${hero.work.occupation}</li>
-                    <li class="list-group-item">Primera Aparición: ${hero.biography['first-appearance']}</li>
-                    <li class="list-group-item">Altura: ${hero.appearance.height.join(" - ")}</li> 
-                    <li class="list-group-item">Peso: ${hero.appearance.weight.join(" - ")}</li> 
-                    <li class="list-group-item">Alianzas: ${hero.biography.aliases}</li>
+                    <li class="list-group-item text-start"><span class="fw-bold">Conexiones: </span> ${hero.connections['group-affiliation']}</li>
+                    <li class="list-group-item text-start"><span class="fw-bold">Publicado por: </span> ${hero.biography.publisher}</li>
+                    <li class="list-group-item text-start"><span class="fw-bold">Ocupación: </span> ${hero.work.occupation}</li>
+                    <li class="list-group-item text-start"><span class="fw-bold">Primera Aparición: </span> ${hero.biography['first-appearance']}</li>
+                    <li class="list-group-item text-start"><span class="fw-bold">Altura: </span>${hero.appearance.height.join(" - ")}</li> 
+                    <li class="list-group-item text-start"><span class="fw-bold">Peso: </span>${hero.appearance.weight.join(" - ")}</li> 
+                    <li class="list-group-item text-start"><span class="fw-bold">Alianzas: </span>${hero.biography.aliases}</li>
                 </ul >
                 </div >
         `;
