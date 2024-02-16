@@ -49,30 +49,33 @@ function getHeroInfo(heroId) {
 
 // Paso 6: Uso de ciclos/métodos de arreglos que permitan ordenar y mostrar la información
 function renderHeroCard(hero) {
-    let height = hero.appearance.height.join(" - ");
-    let weight = hero.appearance.height.join(" - ");
 
     let cardHtml = `
-                <div class="card " >
-                <img src="${hero.image.url}" class="card-img-top" alt="${hero.name}">
-                <div class="card-body">
-                    <h5 class="card-title">${hero.name}</h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-start"><span class="fw-bold">Conexiones: </span> ${hero.connections['group-affiliation']}</li>
-                    <li class="list-group-item text-start"><span class="fw-bold">Publicado por: </span> ${hero.biography.publisher}</li>
-                    <li class="list-group-item text-start"><span class="fw-bold">Ocupación: </span> ${hero.work.occupation}</li>
-                    <li class="list-group-item text-start"><span class="fw-bold">Primera Aparición: </span> ${hero.biography['first-appearance']}</li>
-                    <li class="list-group-item text-start"><span class="fw-bold">Altura: </span>${hero.appearance.height.join(" - ")}</li> 
-                    <li class="list-group-item text-start"><span class="fw-bold">Peso: </span>${hero.appearance.weight.join(" - ")}</li> 
-                    <li class="list-group-item text-start"><span class="fw-bold">Alianzas: </span>${hero.biography.aliases}</li>
-                </ul >
+                <div class="card mb-3"  >
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="${hero.image.url}" class="card-img-top" alt="${hero.name}">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="fw-bold"> ${hero.name}</span></h5>
+                        </div>
+                    </div>
+                <div class="col-md-8">   
+                      
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-start"><span class="fw-bold">Conexiones: </span> ${hero.connections['group-affiliation']}</li>
+                            <li class="list-group-item text-start"><span class="fw-bold">Publicado por: </span> ${hero.biography.publisher}</li>
+                            <li class="list-group-item text-start"><span class="fw-bold">Ocupación: </span> ${hero.work.occupation}</li>
+                            <li class="list-group-item text-start"><span class="fw-bold">Primera Aparición: </span> ${hero.biography['first-appearance']}</li>
+                            <li class="list-group-item text-start"><span class="fw-bold">Altura: </span>${hero.appearance.height.join("  - ")}</li> 
+                            <li class="list-group-item text-start"><span class="fw-bold">Peso: </span>${hero.appearance.weight.join(" - ")}</li> 
+                            <li class="list-group-item text-start"><span class="fw-bold">Alianzas: </span>${hero.biography.aliases}</li>
+                        </ul >
                 </div >
+                </div>
         `;
     $('#heroCard').html(cardHtml);
     // Renderiza la tarjeta del héroe -  ajusta la altura de heroChart
 }
-
 
 
 function renderHeroStatsChart(hero) {
@@ -82,11 +85,10 @@ function renderHeroStatsChart(hero) {
         animationEnabled: true,
         title: {
             text: `Estadísticas de Poder para ${hero.name} `
-
         },
         data: [{
             type: "pie", // Tipo de gráfico de pastel
-            startAngle: 25,
+            startAngle: 10,
             toolTipContent: "<b>{label}</b>: {y}%", // Mostrar porcentaje en el tooltip
             showInLegend: "true",
             legendText: "{label}",

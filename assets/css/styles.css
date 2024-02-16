@@ -54,7 +54,8 @@ ul{
 }
 
 #heroChart{
-  height: 650px;
+  height: 400px;
+  width: 100%
 }
 
 main{
