@@ -49,6 +49,8 @@ function getHeroInfo(heroId) {
 
 // Paso 6: Uso de ciclos/métodos de arreglos que permitan ordenar y mostrar la información
 function renderHeroCard(hero) {
+    let height = hero.appearance.height.join(" - ");
+    let weight = hero.appearance.height.join(" - ");
 
     let cardHtml = `
                 <div class="card " >
@@ -59,10 +61,14 @@ function renderHeroCard(hero) {
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Conexiones: ${hero.connections['group-affiliation']}</li>
                     <li class="list-group-item">Publicado por: ${hero.biography.publisher}</li>
-                    <li class="list-group-item">Primera aparición: ${hero.biography['first-appearance']}</li>
-                </ul>
-                </div>
-    `;
+                    <li class="list-group-item">Ocupación: ${hero.work.occupation}</li>
+                    <li class="list-group-item">Primera Aparición: ${hero.biography['first-appearance']}</li>
+                    <li class="list-group-item">Altura: ${hero.appearance.height.join(" - ")}</li> 
+                    <li class="list-group-item">Peso: ${hero.appearance.weight.join(" - ")}</li> 
+                    <li class="list-group-item">Alianzas: ${hero.biography.aliases}</li>
+                </ul >
+                </div >
+        `;
     $('#heroCard').html(cardHtml);
     // Renderiza la tarjeta del héroe -  ajusta la altura de heroChart
 }
@@ -75,7 +81,7 @@ function renderHeroStatsChart(hero) {
         exportEnabled: true,
         animationEnabled: true,
         title: {
-            text: `Estadísticas de Poder para ${hero.name}`
+            text: `Estadísticas de Poder para ${hero.name} `
 
         },
         data: [{
